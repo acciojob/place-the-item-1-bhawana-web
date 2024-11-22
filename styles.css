@@ -1,2 +1,25 @@
 
 /* Your CSS Code here. */
+.holder {
+  display: flex;              /* Use flexbox to align items in a row */
+  flex-wrap: wrap;            /* Allow items to wrap to the next row if needed */
+  justify-content: space-between; /* Space between items */
+  padding: 0 10px;            /* Add some space between the first and last items and screen edges */
+}
+
+/* Apply styles to each item */
+.item {
+  flex: 1 1 20%;              /* Each item will take at least 20% of the width */
+  margin: 10px;               /* Add space between items */
+  text-align: center;         /* Center the text in each item */
+  background-color: #f0f0f0; /* Optional background color for visibility */
+  padding: 20px;              /* Optional padding for visual spacing */
+  box-sizing: border-box;     /* Ensure padding and borders don't affect size */
+}
+
+/* Optional: Add a minimum width to items for responsiveness */
+@media (max-width: 600px) {
+  .item {
+    flex: 1 1 100%;           /* On small screens, make each item take full width */
+  }
+}
