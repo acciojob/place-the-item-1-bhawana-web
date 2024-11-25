@@ -1,17 +1,30 @@
+/* Container for the items */
 .holder {
-  display: flex;                  /* Enable flexbox */
-  flex-wrap: wrap;                 /* Allow items to wrap onto new rows */
-  justify-content: space-between;  /* Distribute space between items */
-  padding: 0 10px;                 /* Optional: Adds padding on the left and right edges */
+    display: flex;               /* Enable flexbox */
+    justify-content: space-between; /* Space between items */
+    flex-wrap: wrap;              /* Allow wrapping to next row */
+    margin: 0 10px;               /* Margin on both sides */
+    padding: 10px;                /* Padding inside the container */
 }
 
-/* Styling for individual items */
+/* Individual items inside the container */
 .item {
-  flex: 1 0 200px;                /* Make each item flexible, starting at 200px width */
-  margin: 10px;                   /* Adds space between items */
-  background-color: lightblue;    /* Optional: For visibility */
-  text-align: center;             /* Center text within the items */
-  padding: 20px;                  /* Adds padding inside the item */
-  box-sizing: border-box;         /* Ensures padding is included in the width/height */
+    background-color: #4CAF50;  /* Background color */
+    color: white;               /* Text color */
+    padding: 20px;              /* Space inside the item */
+    margin: 10px;               /* Margin between items */
+    flex: 1 1 200px;            /* Flex grow and shrink, with a minimum width of 200px */
+    text-align: center;         /* Center text inside each item */
+    border-radius: 5px;         /* Slight rounding of corners */
 }
- 
+
+/* Optional: For responsive design, ensuring no item is squashed */
+@media (max-width: 600px) {
+    .holder {
+        padding: 5px;  /* Adjust padding for smaller screens */
+    }
+
+    .item {
+        flex: 1 1 100%; /* On small screens, make items take full width */
+    }
+}
